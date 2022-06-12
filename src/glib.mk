@@ -67,13 +67,13 @@ endef
 
 define $(PKG)_BUILD
     # other packages expect glib-tools in $(TARGET)/bin
-    rm -f  usr/armv7-w64-mingw32/bin/glib-*
+    rm -f  usr/aarch64-w64-mingw32/bin/glib-*
 
     # cross build
     cp '$(SOURCE_DIR)/../../cross.txt' '$(SOURCE_DIR)'
     cd '$(SOURCE_DIR)' && meson \
     --cross-file=cross.txt \
-    --prefix '$(PREFIX)/armv7-w64-mingw32' \
+    --prefix '$(PREFIX)/aarch64-w64-mingw32' \
     build-arm
 
     cd '$(SOURCE_DIR)/build-arm' && ninja && meson install
