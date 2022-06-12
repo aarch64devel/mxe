@@ -41,17 +41,16 @@ sudo apt update && sudo apt install \
     xz-utils
 echo "Install meson (as sudo)"
 sudo pip3 install meson
-echo "Clone MXE from my source that way ARM is included :)"
-git clone https://github.com/armdevvel/mxe --depth=1 armmxe
+echo "Clone MXE from my source that way ARM64 is included"
+git clone https://github.com/aarch64devel/mxe --depth=1 arm64mxe
 echo "cd mxe!"
-cd armmxe
+cd arm64mxe
 echo "Download LLVM-MinGW!"
-mkdir usr && cd usr && wget https://github.com/armdevvel/llvm-mingw/releases/download/14.0/armv7-only-llvm-mingw-linux-x86_64.tar.xz
+mkdir usr && cd usr && wget https://github.com/aarch64devel/llvm-mingw/releases/download/14.0/aarch64-only-llvm-mingw-linux-x86_64.tar.xz
 echo "Extract LLVM-MinGW!"
-tar -xf armv7-only-llvm-mingw-linux-x86_64.tar.xz
-echo "Setup known packages that work! This may take a while... Hold on tight!~"
-cd .. && make libpng cmake sdl2 sdl tiff jpeg ccache lame libxml++ libxml2 libxslt libyaml libzip libwebp libusb1 sdl_image sdl_mixer sdl2_image sdl2_mixer zlib yasm dbus pcre icu4c
+tar -xf aarch64-only-llvm-mingw-linux-x86_64.tar.xz
+cd ..
 echo "Adding MXE to your PATH (bash)"
 echo "\n" >> ~/.bashrc
-echo "export PATH=/home/$USER/armmxe/usr/bin"':$PATH' >> ~/.bashrc
+echo "export PATH=/home/$USER/arm64mxe/usr/bin"':$PATH' >> ~/.bashrc
 echo "Finished!"
