@@ -41,13 +41,13 @@ define $(PKG)_BUILD_COMMON
     cd $(BUILD_DIR) && $(MAKE) -j '$(JOBS)' VERBOSE=1 SO_TARGET_VERSION_SUFFIX=
     $(MAKE) -C '$(BUILD_DIR)' -j 1 install VERBOSE=1 SO_TARGET_VERSION_SUFFIX=
     
-    # sloppy fix please don't Get angry
-    cp $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libsicudt.a $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libicudt.a
-    cp $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libsicuin.a $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libicuin.a
-    cp $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libsicuio.a $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libicuio.a
-    cp $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libsicutest.a $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libicutest.a
-    cp $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libsicutu.a $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libicutu.a
-    cp $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libsicuuc.a $(SOURCE_DIR)/../../usr/armv7-w64-mingw32/lib/libicuuc.a
+    # VERY quick fix, messy but it works
+    cp $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libsicudt.a $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libicudt.a
+    cp $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libsicuin.a $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libicuin.a
+    cp $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libsicuio.a $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libicuio.a
+    cp $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libsicutest.a $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libicutest.a
+    cp $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libsicutu.a $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libicutu.a
+    cp $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libsicuuc.a $(SOURCE_DIR)/../../usr/aarch64-w64-mingw32/lib/libicuuc.a
 endef
 
 define $(PKG)_BUILD_TEST
