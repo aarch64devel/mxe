@@ -30,15 +30,15 @@ This version of MXE is meant for specifically WoA64 porting only, so some packag
 
 To use this for ARM development easily, first clone this repository to your home directory on any Linux system. [Be sure you have the dependencies installed from the site already](https://mxe.cc). Then, download a zip of the current release of LLVM-MinGW (preferably from [here](https://github.com/aarch64devel/llvm-mingw/releases)). CD to the MXE folder. Make a directory in the MXE directory called "usr". If you're new to this stuff, /usr is not related to /home/user/youruser/mxe, so don't worry about Linux confusing these. Extract LLVM-MinGW to the usr folder of MXE. Make sure you see aarch64-w64-mingw32, bin, lib, and include in the MXE "usr" folder. You should see something like this.
 
-![MXEs usr folder](images/mxeusr2.png?raw=true)
+![MXEs usr folder](images/mxeusr3.png?raw=true)
 
 Once done, you can run a make command to build all known working WoA libraries. CD back to the root dir of MXE and run the following.
 
-`LIST UNDER CONSTRUCTION FOR WOA64 PACKAGES - PLEASE RETURN AT A LATER DATE`
+`make libpng cmake tiff jpeg ccache lame libxml++ libxml2 libyaml libzip libwebp libusb1 zlib yasm dbus pcre boost icu4c`
 
 (or if you want to just set it up in one command and already have the Linux dependencies installed, just run this long command (lol) --
 
--- `cd ~ && git clone https://github.com/aarch64devel/mxe --depth=1 arm64mxe && cd arm64mxe && mkdir usr && cd usr && wget https://github.com/aarch64devel/llvm-mingw/releases/download/14.0/aarch64-only-llvm-mingw-linux-x86_64.tar.xz && tar -xf aarch64-only-llvm-mingw-linux-x86_64.tar.xz && cd .. && make libpng cmake sdl2 sdl tiff jpeg ccache lame libxml++ libxml2 libxslt libyaml libzip libwebp libusb1 sdl_image sdl_mixer sdl2_mixer zlib yasm dbus pcre boost icu4c && echo $'\n' >> ~/.bashrc && echo "export PATH=/home/$USER/arm64mxe/usr/bin"':$PATH' >> ~/.bashrc` )
+-- `cd ~ && git clone https://github.com/aarch64devel/mxe --depth=1 arm64mxe && cd arm64mxe && mkdir usr && cd usr && wget https://github.com/aarch64devel/llvm-mingw/releases/download/14.0/aarch64-only-llvm-mingw-linux-x86_64.tar.xz && tar -xf aarch64-only-llvm-mingw-linux-x86_64.tar.xz && cd .. && make libpng cmake tiff jpeg ccache lame libxml++ libxml2 libyaml libzip libwebp libusb1 zlib yasm dbus pcre boost icu4c && echo $'\n' >> ~/.bashrc && echo "export PATH=/home/$USER/arm64mxe/usr/bin"':$PATH' >> ~/.bashrc` )
 
 (or, if you would rather use a script, you can use the sh script included for Ubuntu! -- 
 
@@ -72,16 +72,16 @@ Q: Do I need to have a specific distro? \
 A: Nope! This is meant for any distro just like the normal MXE, this repo just comes with patches and extras for ARM development.
 
 Q: What if I have trouble with a package while building for ARM64? \
-A: You can open an issue here, or try to fix it yourself if you wanted to. This repo is in it's early stages so response may be slow but we'll try and respond ASAP!
+A: You can open an issue here, or try to fix it yourself if you wanted to. This repo is in it's early stages so response will be slow but we'll try and respond ASAP!
 
 Q: What if I have more questions?? \
 A: As said, don't be afraid to open an issue for help. If the question is a good one, we will put it here that way more people do not have to dig through issues for help.
 
 Q: So what libraries don't work? (ARM question) \
-A: A good chunk, but bigger ones are working great and even have GLESv2 capabilities thanks to ANGLE!
+A: A good chunk - primarily SDL1 (no aarch64 support)/ SDL2 (NEON issue), GTK, libgcrypt (reason unknown atm) and a considerable more
 
 Q: So what libraries DO work? (ARM question) \
-A: ANGLE, GTK+ 2, GTK+ 3, SDL, SDL2, Qt5, QtWebKit, GLib, libffi, libjpeg, libxslt, libtiff, libpng, librsvg, dbus, PCRE, libtasn, libwebp, libxml, OpenSSL, liblzma, libexslt, libchromaprint, libav* (ffmpeg), json-c, json-glib, freetype, expat, fribidi, bzip2, libsamplerate, FFTW3, GStreamer (manual build), pthreads, and pixman (MPFR, MPC, and GMP will build, but need work)
+A: List of 12/06/2022 - glib, libsigc++, libxml2, libxml+, libgpg_error, bzip2, ccache, dbus, expat, gettext, jpeg, lame, libffi, libiconv, libpng, libsamplerate, libwebp, pcre, tiff, xz, zlib, cmake, icu4c / Others potentially work but have so far not been tested
 	
 # Original README
 
