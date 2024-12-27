@@ -1,4 +1,7 @@
-# MXE (M cross environment) - for ARM64 Windows development (UNDER CONSTRUCTION - DO NOT USE YET)
+# mxe-STATIC for ARM64 Windows has been discontinued!
+## The contents of this repo are now read-only, for continued support and updated packages, please change to mxe-SHARED. Thank you!
+
+### The original readme for historical purposes:
 
 This is a modified version of MXE that comes with fixed scripts and sources that way Windows on ARM64 can have development for it. 
 
